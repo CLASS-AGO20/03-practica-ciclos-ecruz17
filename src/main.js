@@ -29,17 +29,31 @@ export default class App {
     obtenerDivisibles(numero) {
 
         let i = 1;
-        let num = numero;
+        let divisibles = 0;
 
         do {       
-            if(num%i == 0){
-                i++;
+            if(numero%i === 0){
+                divisibles++;
             }
-            num = num - 1;
-        } while (i <= num);
+            i++;
+        } while (i<=numero);
 
-        return i;
+        return divisibles;
     }
+
+    elevar(numero, potencia) {
+
+        let resultado = 1;
+
+        for(let i = 1; i <= potencia; i++) {
+
+            resultado = numero*resultado;
+
+        }   
+
+        return resultado;
+    }
+
 
 }
 
@@ -50,3 +64,5 @@ console.log(app.factorial(5));
 console.log(app.convertirAString(5));
 
 console.log(app.obtenerDivisibles(6));
+
+console.log(app.elevar(3,4))
